@@ -1,0 +1,9 @@
+words = ["apple","banana","coconut","durian","apricot","corn","berry","dalgona"]
+d = {}
+for word in words:
+    fchar = word[0]
+    if fchar in d:
+        d[fchar].append(word)
+    else:
+        d[fchar] = [word]
+print(d)
