@@ -1,0 +1,13 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+data = pd.read_csv('tips.csv')
+plt.figure(figsize = (8,6))
+sns.boxplot(x='day', y = 'total_bill', data = data, palette='pastel')
+
+plt.title("Box and whisker plot of total bill by day", fontsize = 14)
+plt.xlabel('Day', fontsize =12)
+plt.ylabel('Total Bill', fontsize = 12)
+plt.grid(True)
+plt.show()
