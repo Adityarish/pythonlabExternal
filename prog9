@@ -1,0 +1,21 @@
+import pandas as pd
+data = {
+    'Name':['Aditya','Akash',None,'Ayush'],
+    'age':[None, 19,21, 20],
+    'city':['Bihar','Blr','Delhi', None]
+}
+
+df = pd.DataFrame(data)
+print(df)
+print("\n")
+a = df.isnull().any(axis=0)
+b = df.isnull().sum(axis=0)
+print(a)
+print("\n")
+print(b)
+c = df.isnull().any(axis = 1)
+d = df.isnull().sum(axis = 1)
+print("\n")
+print(c)
+print("\n")
+print(d)
