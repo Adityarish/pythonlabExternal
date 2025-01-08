@@ -1,0 +1,8 @@
+def naturalSum(n):
+    if n == 1:
+        return 1
+    else:
+        return n+naturalSum(n-1)
+n = int(input("Enter a number: "))
+res = naturalSum(n)
+print(f"Sum of first {n} natural number is: {res}")
