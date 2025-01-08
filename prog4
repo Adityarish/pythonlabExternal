@@ -1,0 +1,38 @@
+class ListOperation:
+    def __init__(self):
+        self.List = []
+    def Append(self, x):
+        self.List.append(x)
+    def Delete(self, x):
+        if x in self.List:
+            self.List.remove(x)
+        else:
+            print(f"{x} is not found")
+    def Display(self):
+        if not self.List:
+            print("Empty List")
+        else:
+            for x in self.List:
+                print(x, "\t")
+
+def main():
+    Operation = ListOperation()
+    isRunning = True
+    while isRunning:
+        print("1. Append 2. Delete 3. Display 4. Exit")
+        choice = int(input("Enter your choice: "))
+        if choice == 1:
+            x = input("Enter value to append: ")
+            Operation.Append(x)
+        elif choice == 2:
+            x = input("Enter value to delete: ")
+            Operation.Delete(x)
+        elif choice == 3:
+            Operation.Display()
+        elif choice == 4:
+            isRunning = False
+        else:
+            print("Invalid choice")
+
+if __name__ == "__main__":
+    main()
