@@ -1,0 +1,16 @@
+string  = str(input("Enter the string: "))
+length = 0
+d = {}
+for ch in string:
+    if(ch == ' '):
+        continue
+    length += 1
+for ch in string:
+    if(ch == ' '):
+        continue
+    if ch not in d:
+        d[ch] = 1
+    else:
+        d[ch] += 1
+print("Length of string is ", length)
+print("The required dictionary is ",d)
