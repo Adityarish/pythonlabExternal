@@ -1,0 +1,24 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('https://raw.githubusercontent.com/Adityarish/pythonlabExternal/refs/heads/main/data.csv') 
+plt.figure(figsize = (8,6))
+sns.scatterplot(data = df, x = "bill_length_mm", y = "bill_depth_mm" , hue = "species", marker="x")
+plt.title("Scatter plot of Bill length vs Bill depth")
+plt.grid(True)
+plt.show()
+
+plt.figure(figsize = (8,6))
+sns.histplot(data =df, x="bill_length_mm", kde=True,bins = 20, color= "blue")
+
+plt.title("Histogram of Bill length")
+plt.grid(True)
+plt.show()
+
+plt.figure(figsize = (8,6))
+sns.barplot(data =df, x= "species", y = "body_mass_g", palette = "viridis")
+
+plt.title("Bar Plot of Body mass of Species")
+plt.grid(True)
+plt.show()
