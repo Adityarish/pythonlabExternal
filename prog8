@@ -1,0 +1,28 @@
+import pandas as pd
+import numpy as np
+
+data = {
+    'A' : [1,1,0,1],
+    'B' : [0,1,1,0]
+} 
+df = pd.DataFrame(data)
+print("Reading CSV: \n",df)
+
+correlation = df.corr()
+print("\nCorrelation:\n",correlation)
+
+jointFreq = pd.crosstab(df['A'], df['B'])
+jointProb = jointFreq / jointFreq.values.sum()
+print("\nJoint probability:\n",jointProb)
+
+margProbA = jointProb.sum(axis = 1)
+print("\nmarginal Probability of A\n",margProbA)
+
+margProbB = jointProb.sum(axis = 0)
+print("\nmarginal Probability of B\n",margProbB)
+
+condProbAgivenB = jointProb.div(margProbB, axis = 1)
+print("\n Condition Probability of A given B\n",condProbAgivenB)
+
+condProbBgivenA = jointProb.div(margProbA, axis = 0)
+print("\n Condition Probability of B given A\n",condProbBgivenA)
